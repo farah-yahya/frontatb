@@ -5,10 +5,12 @@ import {catchError, Observable, throwError} from "rxjs";
 const  APIUrl ="http://localhost:8081/api/user";
 
 @Injectable({
+
   providedIn: 'root'
 })
 export class UserService extends DataService {
   constructor(http: HttpClient, private httpPrivate: HttpClient) {
+
     super(APIUrl, http);
   }
   getFile(userId: number): Observable<any> {
@@ -27,6 +29,7 @@ export class UserService extends DataService {
   }
   // upload Image Profile For user
   uploadImage(id : number,uploadedImage : any){
+
     return this.httpPrivate.post(`${APIUrl}/uploadFile/${id}`,uploadedImage);
   }
 }

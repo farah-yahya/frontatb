@@ -20,6 +20,7 @@ const LogoImgPath =
   'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp';
 
 @Component({
+
   selector: 'app-profile',
   standalone: true,
   imports: [
@@ -98,14 +99,17 @@ export class ProfileComponent implements OnInit {
     return this.form.get('email');
   }
   get lastName() {
+
     return this.form.get('lastName');
   }
   get firstName() {
+
     return this.form.get('firstName');
   }
 
   // Method invoked on form submission
   onSubmit() {
+
     this.user.firstName = this.firstName?.value;
     this.user.email = this.email?.value;
     this.user.lastName = this.lastName?.value;
@@ -133,6 +137,7 @@ export class ProfileComponent implements OnInit {
   uploadedImage!: any;
   // Method to get profile picture
   getImage(userId: number) {
+
     this.userService.getFile(userId).subscribe(
       (res: any) => {
         let objectURL = URL.createObjectURL(res);
@@ -150,6 +155,7 @@ export class ProfileComponent implements OnInit {
 
   // Method to change profile picture
   imageUploadAction() {
+
     const imageFormData = new FormData();
     imageFormData.append('file', this.uploadedImage);
     this.userService.uploadImage(this.user.id as number, imageFormData).subscribe(

@@ -7,6 +7,7 @@
       List of equipements
     </caption>
     <thead>
+
       <tr>
         <th scope="col">NUM_ID EQUIPEMENT</th>
         <th scope="col">Categorie</th>
@@ -26,6 +27,7 @@
         <td>{{ equipement.name }}</td>
         <td>
           <div>
+
             <button *ngIf="user.privilege == 'EDIT' || user.privilege == 'ALL'" class="button" data-toggle="modal" data-target="#editModal" [routerLink]="['/Dashboard/Equipements/edit',equipement.id]">
               <mat-icon>edit</mat-icon>
             </button>

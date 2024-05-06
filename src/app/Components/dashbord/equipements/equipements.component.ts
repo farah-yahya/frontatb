@@ -7,13 +7,16 @@ import {MatIcon} from "@angular/material/icon";
 import {User} from "../../../Models/users";
 import {UserService} from "../../../Services/user.service";
 import {TokenStorageService} from "../../../Services/token.service";
+
 @Component({
+
   selector: 'app-equipements',
   standalone: true,
   imports: [NgForOf, DatePipe, RouterLink, MatIcon, NgIf],
   templateUrl: './equipements.component.html',
   styleUrl: './equipements.component.css',
 })
+
 export class EQUIPEMENTSComponent {
   equipements: Equipemnt[] = [];
   user : User = {
@@ -36,6 +39,7 @@ export class EQUIPEMENTSComponent {
       });
   }
     delete(id : number){
+
       if (confirm("Are you sure you want to delete this equipment?")) {
         this.equipemetService.Delete(id).subscribe({
           next: () => {

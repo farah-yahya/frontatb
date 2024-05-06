@@ -39,6 +39,7 @@ import {EntryService} from "../../../Services/entry.service";
 export class UsersComponent {
   users: User[] = [];
   constructor(private userService: UserService,private entryservice : EntryService) {
+
     userService.getAll().subscribe(
       (data) => {
         this.users = data;
@@ -47,7 +48,8 @@ export class UsersComponent {
       (error) => {
         console.log(error);
       }
-    );
+    )
+    ;
   }
 
   // Add Form Variable and Functions
@@ -67,18 +69,23 @@ export class UsersComponent {
 
   // Get all Form Fields
   get email() {
+
     return this.formSubs.get('email');
   }
   get firstName() {
+
     return this.formSubs.get('firstName');
   }
   get lastName() {
+
     return this.formSubs.get('lastName');
   }
   get password() {
+
     return this.formSubs.get('password');
   }
   get privilege() {
+
     return this.formSubs.get('privilege');
   }
 
@@ -88,6 +95,7 @@ export class UsersComponent {
 
   // Method invoked on form submission
   onSubmit() {
+
     if(this.selectedUser.firstName== ""){
       const addInfos = {
         email: this.email?.value,
@@ -127,6 +135,7 @@ export class UsersComponent {
 
 
   delete(id : number){
+
     this.userService.Delete(id).subscribe(
       ()=>{
         console.log('User deleted successfully.');
@@ -139,6 +148,7 @@ export class UsersComponent {
   }
 
   edit(user : User){
+
     this.selectedUser = user;
     this.formSubs.patchValue({
       email: user.email,
@@ -149,6 +159,7 @@ export class UsersComponent {
   }
 
   emptyModal(){
+
     this.selectedUser = {
       email: "", firstName: "", id: 0, lastName: "", password: "", privilege: "", role: "", status: false
 

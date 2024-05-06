@@ -98,10 +98,12 @@ export class StatisticsComponent {
   }
 
   formatData(data: any): any[] {
+
     return Object.entries(data).map(([value, name]) => ({
       value: parseInt(value),
       name: name
-    }));
+    })
+    );
   }
 
 

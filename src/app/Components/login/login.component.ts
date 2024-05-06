@@ -111,22 +111,27 @@ export class LoginComponent {
 
   // Getter methods for subscription form controls
   get firstName() {
+
     return this.formSubs.get('firstName');
   }
   get lastName() {
+
     return this.formSubs.get('lastName');
   }
   get emailSubs() {
+
     return this.formSubs.get('emailSubs');
   }
 
   get passwordSubs() {
+
     return this.formSubs.get('passwordSubs');
   }
 
   SubsInfo : User = new User();
   // Function invoked on subscription form submission
   onSubmitSubs() {
+
     this.SubsInfo.firstName = this.firstName?.value;
     this.SubsInfo.lastName = this.lastName?.value;
     this.SubsInfo.email = this.emailSubs?.value;
@@ -144,7 +149,8 @@ export class LoginComponent {
             this.errorMessage = err.message;
             this._snackBar.open( this.errorMessage, '❌');
           }
-        });
+        }
+        );
 
       this.router.navigate(['/Dashboard']);
     } else {

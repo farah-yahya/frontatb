@@ -1,4 +1,5 @@
 export class User {
+
   id!: number;
   firstName: string;
   lastName: string;
@@ -9,6 +10,7 @@ export class User {
   privilege !: string;
 
   constructor() {
+
     this.firstName = "";
     this.lastName = "";
     this.email = "";
